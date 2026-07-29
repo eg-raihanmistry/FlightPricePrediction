@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+</head>
+<body>
+    <h3>Flight Price Prediction</h3>
+    <p><a href="http://127.0.0.1:8000/about">About </a>&nbsp;<a href="http://127.0.0.1:8000/contact">Contact </a></p>
+    <hr>
+
+    <div style="border: 2px solid black;width: 30%;padding: 20px;background-color: aqua;">
+        <div style="padding: 20px; border: 2px solid red; margin: 10px;">
+            <p>Predicted Price : {{ price }}</p>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <div style="margin-bottom: 1rem;">
+                <label for="airline">Select Airline </label>
+                <select name="airline" id="airline">
+                    <option value="0">AirAsia</option>
+                    <option value="1">Air_India</option>
+                    <option value="2">GO_FIRST</option>
+                    <option value="3">Indigo</option>
+                    <option value="4">SpiceJet</option>
+                    <option value="5">Vistara</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="source_city">Source City </label>
+                <select name="source_city" id="source_city">
+                    <option value="0">Bangalore</option>
+                    <option value="1">Chennai</option>
+                    <option value="2">Delhi</option>
+                    <option value="3">Hyderabad</option>
+                    <option value="4">Kolkata</option>
+                    <option value="5">Mumbai</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="departure_time">Deperture Time </label>
+                <select name="departure_time" id="departure_time">
+                    <option value="0">Afternoon</option>
+                    <option value="1">Early_Morning</option>
+                    <option value="2">Evening</option>
+                    <option value="3">Late_Night</option>
+                    <option value="4">Morning</option>
+                    <option value="5">Night</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="stops">Stops</label>
+                <input type="number" name="stops" id="stops">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="arrival_time">Arrival Time </label>
+                <select name="arrival_time" id="arrival_time">
+                    <option value="0">Afternoon</option>
+                    <option value="1">Early_Morning</option>
+                    <option value="2">Evening</option>
+                    <option value="3">Late_Night</option>
+                    <option value="4">Morning</option>
+                    <option value="5">Night</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="destination_city">Destination City </label>
+                <select name="destination_city" id="destination_city">
+                    <option value="0">Bangalore</option>
+                    <option value="1">Chennai</option>
+                    <option value="2">Delhi</option>
+                    <option value="3">Hyderabad</option>
+                    <option value="4">Kolkata</option>
+                    <option value="5">Mumbai</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="class">Class </label>
+                <select name="class" id="class">
+                    <option value="0">Business</option>
+                    <option value="1">Economy</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="duration">Flight Duration </label>
+                <input type="number" name="duration" id="duration">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label for="days_left">Days Left </label>
+                <input type="number" name="days_left" id="days_left">
+            </div>
+
+            <div>
+                <button type="submit">Predict Flight Price</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
